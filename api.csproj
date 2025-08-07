@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="DTOs\" />
+      <Folder Include="DTOs\Comment\" />
       <Folder Include="Interfaces\" />
     </ItemGroup>
 
