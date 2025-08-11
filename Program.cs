@@ -1,4 +1,6 @@
 using api.Data;
+using api.Interfaces;
+using api.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace api;
@@ -17,7 +19,8 @@ public class Program
         builder.Services.AddOpenApi();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
+        builder.Services.AddScoped<IStockRepository, StockRepository>();
+        
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
