@@ -5,9 +5,10 @@ namespace api.Interfaces;
 
 public interface IStockRepository
 {
-    Task<List<Stock>> GetAllStocks();
-    Task<Stock?> GetStockById(int id);
-    Task<Stock> CreateStock(Stock stockModel);
-    Task<Stock?> UpdateStock(int id, UpdateStockRequestDto stockDto);
-    Task<Stock?> DeleteStock(int id);
+    Task<List<Stock>> GetAllAsync();
+    Task<Stock?> GetByIdAsync(int id);
+    Task<Stock> CreateAsync(Stock stockModel);
+    Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto);
+    Task<Stock?> DeleteAsync(int id);
+    Task<bool> StockExists(int id);
 }
