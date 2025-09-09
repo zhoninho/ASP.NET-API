@@ -59,7 +59,7 @@ public class Program
         
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
         {
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
 
         builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
@@ -90,7 +90,7 @@ public class Program
                 ValidAudience = builder.Configuration["Jwt:Audience"],
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(
-                    System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SigningKey"] ?? string.Empty)
+                    System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? string.Empty)
                 )
             };
         });
